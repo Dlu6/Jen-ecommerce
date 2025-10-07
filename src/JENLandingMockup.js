@@ -595,7 +595,7 @@ function VendorScreen() {
           </button>
           <div className="flex-1 text-center px-4">
             <h1 className="text-lg font-bold text-gray-900 whitespace-nowrap">
-              Kito Burger 🍔
+              Kito Burger
             </h1>
             <p className="text-xs text-gray-500 mt-0.5">Fast Food</p>
           </div>
