@@ -572,7 +572,7 @@ function VendorScreen() {
       </div>
 
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
+      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-3">
         <div className="flex items-center justify-between">
           <button
             className="flex items-center gap-2 text-sm font-semibold text-gray-600"
@@ -593,9 +593,11 @@ function VendorScreen() {
             </svg>
             Back
           </button>
-          <div className="text-center">
-            <div className="text-lg font-bold text-gray-900">Kito Burger</div>
-            <div className="text-xs text-gray-500">Fast Food</div>
+          <div className="flex-1 text-center px-4">
+            <h1 className="text-lg font-bold text-gray-900 whitespace-nowrap">
+              Kito Burger
+            </h1>
+            <p className="text-xs text-gray-500 mt-0.5">Fast Food</p>
           </div>
           <button className="p-2 rounded-full bg-gray-100">
             <IconHeart className="h-5 w-5 text-gray-600" />
