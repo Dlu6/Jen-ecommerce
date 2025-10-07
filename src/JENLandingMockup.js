@@ -211,13 +211,13 @@ export default function JENLandingMockup() {
           </div>
           <div className="flex items-center gap-2">
             <button
-              className="hidden rounded-xl px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-black/10 md:block"
+              className="hidden rounded-xl px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-black/10 shadow-lg hover:shadow-xl transition-all duration-300 md:block"
               style={{ background: "white" }}
             >
               Become a Vendor
             </button>
             <div
-              className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white"
+              className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
               style={{ background: brand.primary }}
             >
               <a
