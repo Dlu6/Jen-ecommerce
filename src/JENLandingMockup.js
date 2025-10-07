@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const brand = {
   primary: "#acb625",
@@ -66,6 +66,86 @@ const Row = ({ title, children }) => (
     <div className="grid grid-cols-2 gap-3">{children}</div>
   </div>
 );
+
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    // Set target date to November 20, 2025
+    const targetDate = new Date("2025-11-20T00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    // Update immediately
+    updateCountdown();
+
+    // Then update every second
+    const timer = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const timeUnits = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
+
+  return (
+    <div className="flex flex-col items-start space-y-3">
+      <div className="text-left">
+        <h3 className="text-lg font-bold text-slate-800 mb-1">
+          Launch Countdown
+        </h3>
+        <p className="text-sm text-slate-600">November 20, 2025</p>
+      </div>
+      <div className="flex gap-3">
+        {timeUnits.map((unit, index) => (
+          <div key={unit.label} className="flex flex-col items-center">
+            <div
+              className="bg-slate-100 rounded-lg px-3 py-2 min-w-[60px] text-center shadow-sm border border-slate-200"
+              style={{
+                animation: "pulse 2s infinite",
+                animationDelay: `${index * 0.1}s`,
+              }}
+            >
+              <div className="text-2xl font-bold text-slate-800">
+                {unit.value.toString().padStart(2, "0")}
+              </div>
+            </div>
+            <div className="text-xs text-slate-600 mt-1 font-medium">
+              {unit.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function JENLandingMockup() {
   return (
@@ -230,6 +310,11 @@ export default function JENLandingMockup() {
                 #acb625
               </code>
             </div>
+
+            {/* Countdown Timer */}
+            <div className="mt-8">
+              <CountdownTimer />
+            </div>
           </div>
 
           <div className="relative">
@@ -361,7 +446,7 @@ export default function JENLandingMockup() {
                 Intuitive and user friendly mobile app screens. Mocked up as a
                 reference for spacing, typography for final design and
                 hierarchy.
-                <br />{" "}
+                <br /> <br />
                 <span className="text-red-500 font-semibold">
                   Disclaimer:
                 </span>{" "}
@@ -403,13 +488,7 @@ export default function JENLandingMockup() {
                 gradually.
               </p>
             </div>
-            <div className="flex gap-3 md:justify-end">
-              <button
-                className="rounded-2xl px-5 py-3 text-sm font-semibold text-white"
-                style={{ background: brand.primary }}
-              >
-                Soft launch ~ 20.10.2025
-              </button>
+            <div className="flex justify-end">
               <a
                 href="https://wa.me/256700771301"
                 target="_blank"
