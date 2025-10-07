@@ -83,7 +83,7 @@ export default function JENLandingMockup() {
             </div>
             <div>
               <p
-                className="text-xl font-black tracking-tight"
+                className="text-xl  font-black tracking-tight"
                 style={{ color: brand.primary }}
               >
                 JEN
@@ -127,7 +127,7 @@ export default function JENLandingMockup() {
               Become a Vendor
             </button>
             <button
-              className="rounded-xl px-4 py-2 text-sm font-semibold text-black"
+              className="rounded-xl px-4 py-2 text-sm font-semibold text-white"
               style={{ background: brand.primary }}
             >
               Get the App
