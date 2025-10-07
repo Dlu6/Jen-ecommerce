@@ -276,25 +276,25 @@ export default function JENLandingMockup() {
                 <VendorCard
                   name="Kito Burger"
                   tags={["Burgers", "Fries"]}
-                  price="9.99"
+                  price="12,000"
                   rating="4.6"
                 />
                 <VendorCard
                   name="Mama Samosa"
                   tags={["Snacks", "Chai"]}
-                  price="3.50"
+                  price="15,000"
                   rating="4.8"
                 />
                 <VendorCard
                   name="Pasta Roma"
                   tags={["Italian", "Pasta"]}
-                  price="11.00"
+                  price="11,000"
                   rating="4.5"
                 />
                 <VendorCard
                   name="Spice House"
                   tags={["Curry", "BBQ"]}
-                  price="7.80"
+                  price="18,000"
                   rating="4.7"
                 />
               </div>
@@ -306,10 +306,10 @@ export default function JENLandingMockup() {
                 supplies—delivered fast.
               </p>
               <div className="mt-5 grid grid-cols-2 gap-3">
-                <ProductCard title="Fresh Bananas" sub="1kg" price="2.20" />
-                <ProductCard title="UHT Milk" sub="500ml" price="0.80" />
-                <ProductCard title="Dish Soap" sub="750ml" price="2.10" />
-                <ProductCard title="Toothpaste" sub="110g" price="1.25" />
+                <ProductCard title="Fresh Bananas" sub="1kg" price="8,000" />
+                <ProductCard title="UHT Milk" sub="500ml" price="13,000" />
+                <ProductCard title="Dish Soap" sub="750ml" price="21,000" />
+                <ProductCard title="Toothpaste" sub="110g" price="17,500" />
               </div>
             </div>
           </div>
@@ -528,7 +528,7 @@ function HomeScreen({ compact = false }) {
         <div className={`mt-6 ${compact ? "space-y-5" : "space-y-6"}`}>
           <Row title="Popular Restaurants">
             <MiniVendorCard
-              name="Kito Burger"
+              name="Burger"
               tag="Burgers • 25–35 min"
               rating="4.6"
               image="🍔"
@@ -945,30 +945,30 @@ function CheckoutScreen() {
       {/* Cart Items */}
       <div className="flex-1 overflow-y-auto px-4 py-6">
         <div className="space-y-4">
-          <LineItem title="UHT Milk 500ml" qty={2} price={0.8} image="🥛" />
-          <LineItem title="Toothpaste 110g" qty={1} price={1.25} image="🦷" />
+          <LineItem title="UHT Milk 500ml" qty={2} price={800} image="🥛" />
+          <LineItem title="Toothpaste 110g" qty={1} price={1250} image="🦷" />
           <LineItem
             title="Double Beef + Fries"
             qty={1}
-            price={7.9}
+            price={7900}
             image="🍔"
           />
         </div>
 
         {/* Order Summary */}
-        <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
           <div className="space-y-4 text-sm">
             <div className="flex items-center justify-between">
               <span className="text-gray-600">Subtotal</span>
-              <span className="font-semibold text-gray-900">Shs 10,750</span>
+              <span className="font-medium text-gray-900">Shs 10,750</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-gray-600">Delivery fee</span>
-              <span className="font-semibold text-gray-900">Shs 1,500</span>
+              <span className="font-medium text-gray-900">Shs 1,500</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-gray-600">Service fee</span>
-              <span className="font-semibold text-gray-900">Shs 0</span>
+              <span className="font-medium text-gray-900">Shs 0</span>
             </div>
             <div className="border-t border-gray-200 pt-4">
               <div className="flex items-center justify-between">
@@ -991,10 +991,8 @@ function CheckoutScreen() {
               <span className="text-sm font-bold text-gray-600">💳</span>
             </div>
             <div className="flex-1">
-              <div className="text-base font-medium text-gray-900">
-                •••• 4242
-              </div>
-              <div className="text-sm text-gray-500">Expires 12/25</div>
+              <div className="text-sm font-medium text-gray-900">•••• 4242</div>
+              <div className="text-xs text-gray-500">Expires 12/25</div>
             </div>
             <button className="text-sm font-medium text-blue-600">
               Change
@@ -1215,12 +1213,10 @@ const LineItem = ({ title, qty, price, image }) => (
       {image}
     </div>
     <div className="flex-1">
-      <div className="text-sm font-medium text-gray-900">{title}</div>
+      <div className="text-xs font-semibold text-gray-900">{title}</div>
       <div className="text-xs text-gray-500">Qty {qty}</div>
     </div>
-    <div className="text-sm font-semibold text-gray-900">
-      Shs {(qty * price).toFixed(2)}
-    </div>
+    <div className="text-xs font-semibold text-gray-900">Shs {qty * price}</div>
   </div>
 );
 
