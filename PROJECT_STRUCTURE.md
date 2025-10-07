@@ -107,6 +107,7 @@ Jen/
 ### User Roles & Access Levels
 
 #### 🔑 Super Admin
+
 - **Full Platform Access**: Complete control over all vendors and products
 - **Vendor Onboarding**: Approve/reject vendor applications
 - **Product Approval**: Review and approve all product submissions
@@ -116,6 +117,7 @@ Jen/
 - **Payment Monitoring**: Track all transactions and payouts
 
 #### 🏪 Vendor (Restaurant & General Merchandise)
+
 - **Shop Setup**: Complete vendor profile and shop details
 - **Product Management**: Upload, edit, and manage products
 - **Inventory Control**: Real-time stock management
@@ -124,6 +126,7 @@ Jen/
 - **Settings**: Shop configuration and preferences
 
 #### 👤 Customer
+
 - **Product Browsing**: Search and filter products by category
 - **Shopping Cart**: Add/remove items and manage quantities
 - **Order Placement**: Checkout and payment processing
@@ -133,12 +136,14 @@ Jen/
 ### Frontend Applications
 
 #### 🌐 Web Application (React)
+
 - **Landing Page**: Marketing and vendor showcase
 - **Customer Portal**: Shopping interface and account management
 - **Vendor Dashboard**: Shop management and analytics
 - **Admin Panel**: Platform administration and oversight
 
 #### 📱 Mobile Applications (React Native)
+
 - **iOS App**: Native iOS shopping experience
 - **Android App**: Native Android shopping experience
 - **Push Notifications**: Real-time order and inventory alerts
@@ -147,6 +152,7 @@ Jen/
 ### Backend Services (Node.js + MongoDB)
 
 #### 🗄️ Database Models
+
 - **User**: Customer accounts and authentication
 - **Vendor**: Shop profiles and vendor information
 - **Product**: Product catalog with images and inventory
@@ -156,6 +162,7 @@ Jen/
 - **Payment**: Transaction records and payment processing
 
 #### 🔌 API Endpoints
+
 - **Authentication**: Login, registration, password reset
 - **Vendor Management**: CRUD operations for vendors
 - **Product Management**: CRUD operations for products
@@ -167,6 +174,7 @@ Jen/
 ### Key Features
 
 #### 🛒 E-commerce Core
+
 - **Multi-vendor Support**: Separate restaurant and general merchandise vendors
 - **Product Catalog**: Categorized product browsing and search
 - **Shopping Cart**: Persistent cart with real-time updates
@@ -174,24 +182,28 @@ Jen/
 - **Inventory Management**: Automatic stock tracking and alerts
 
 #### 💳 Payment & Transactions
+
 - **Multiple Payment Gateways**: Stripe, PayPal, Mobile Money
 - **Secure Processing**: PCI-compliant payment handling
 - **Payout Management**: Automated vendor payments
 - **Transaction History**: Complete payment records
 
 #### 📸 Media Management
+
 - **AWS S3 Integration**: Scalable image storage
 - **Image Optimization**: Automatic resizing and compression
 - **Multiple Formats**: Support for various image types
 - **CDN Delivery**: Fast image loading worldwide
 
 #### 🔔 Real-time Features
+
 - **Order Notifications**: Instant vendor alerts for new orders
 - **Stock Alerts**: Automatic out-of-stock notifications
 - **Order Tracking**: Real-time delivery updates
 - **Chat Support**: Customer-vendor communication
 
 #### 🔐 Security & Authentication
+
 - **JWT Authentication**: Secure token-based auth
 - **Role-based Access**: Granular permission system
 - **Data Validation**: Input sanitization and validation
@@ -262,6 +274,7 @@ Jen/
 ## 🔧 Technical Stack
 
 ### Frontend Technologies
+
 - **React 18**: Modern UI library with hooks and functional components
 - **Tailwind CSS**: Utility-first CSS framework for rapid styling
 - **React Router**: Client-side routing and navigation
@@ -272,6 +285,7 @@ Jen/
 - **React Native**: Cross-platform mobile development
 
 ### Backend Technologies
+
 - **Node.js**: JavaScript runtime environment
 - **Express.js**: Web application framework
 - **MongoDB**: NoSQL database for flexible data storage
@@ -286,6 +300,7 @@ Jen/
 ### Database Schema
 
 #### User Model
+
 ```javascript
 {
   _id: ObjectId,
@@ -305,6 +320,7 @@ Jen/
 ```
 
 #### Vendor Model
+
 ```javascript
 {
   _id: ObjectId,
@@ -332,6 +348,7 @@ Jen/
 ```
 
 #### Product Model
+
 ```javascript
 {
   _id: ObjectId,
@@ -356,6 +373,7 @@ Jen/
 ```
 
 #### Order Model
+
 ```javascript
 {
   _id: ObjectId,
@@ -379,18 +397,21 @@ Jen/
 ### Development Scripts
 
 #### Frontend
+
 - `npm start`: Development server
 - `npm run build`: Production build
 - `npm test`: Run tests
 - `npm run lint`: ESLint code checking
 
 #### Backend
+
 - `npm run dev`: Development server with nodemon
 - `npm start`: Production server
 - `npm run test`: Run API tests
 - `npm run seed`: Seed database with sample data
 
 #### Mobile
+
 - `npm run ios`: Run iOS simulator
 - `npm run android`: Run Android emulator
 - `npm run build:ios`: Build iOS app
