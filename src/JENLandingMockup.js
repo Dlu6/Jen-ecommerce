@@ -934,11 +934,11 @@ function CheckoutScreen() {
   );
 }
 
-const Tag = ({ children }) => (
-  <span className="inline-flex items-center rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-slate-700 ring-1 ring-black/10 shadow-sm">
-    {children}
-  </span>
-);
+// const Tag = ({ children }) => (
+//   <span className="inline-flex items-center rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-slate-700 ring-1 ring-black/10 shadow-sm">
+//     {children}
+//   </span>
+// );
 
 const Cat = ({ icon, label, active = false }) => (
   <div className="grid place-items-center gap-2">
