@@ -493,7 +493,7 @@ function HomeScreen({ compact = false }) {
             </div>
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="rounded-full bg-white/15 backdrop-blur-sm px-3 py-1.5 text-[11px] font-semibold text-white border border-white/20">
-                🎉 Free delivery over UGX 200K
+                Free delivery over 🎉{""} UGX 200K
               </span>
               <span className="rounded-full bg-white/15 backdrop-blur-sm px-3 py-1.5 text-[11px] font-semibold text-white border border-white/20">
                 ⭐ 4.8 Rating
@@ -620,66 +620,75 @@ function VendorScreen() {
           </div>
         </div>
         <div className="relative px-4 -mt-8">
-          <div className="flex items-end gap-4">
-            <div className="h-16 w-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl">
+          <div className="flex flex-col items-center space-y-4">
+            {/* Image at the top - bigger */}
+            <div className="h-24 w-24 rounded-2xl bg-white shadow-lg flex items-center justify-center text-4xl">
               🍔
             </div>
-            <div className="flex-1 pb-2">
-              <div className="space-y-2 mt-2">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center">
-                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
-                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
-                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
-                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
-                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
-                  </div>
-                  <span className="text-sm font-bold text-gray-200">4.6</span>
-                  <span className="text-xs text-gray-100">(1.2k)</span>
+
+            {/* Text content below image */}
+            <div className="text-center space-y-2">
+              <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center">
+                  <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                  <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                  <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                  <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                  <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
                 </div>
-                <div className="flex items-center gap-4 text-xs text-gray-600">
-                  <span className="flex items-center gap-1">
-                    <svg
-                      className="h-3 w-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    25–35 min
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <svg
-                      className="h-3 w-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    Shs 3,000
-                  </span>
-                </div>
+                <span className="text-sm font-bold text-gray-500">4.6</span>
+                <span className="text-xs text-gray-500">(1.2k)</span>
               </div>
-              <div className="mt-2 text-sm text-gray-500">
+
+              {/* Restaurant name and cuisine */}
+              <div className="text-md font-bold text-gray-900">Beef Burger</div>
+              <div className="text-xs text-gray-500">
                 Burgers • American • Fast Food
+              </div>
+
+              {/* Price and delivery time below name */}
+              <div className="space-y-1">
+                {/* Price on its own row */}
+                <div className="flex items-center justify-center gap-1 text-xs text-gray-600">
+                  <svg
+                    className="h-2.5 w-2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Shs 3,000
+                </div>
+
+                {/* Duration below price */}
+                <div className="flex items-center justify-center gap-1 text-xs text-gray-600">
+                  <svg
+                    className="h-2.5 w-2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  25–35 min
+                </div>
               </div>
             </div>
           </div>
@@ -687,23 +696,27 @@ function VendorScreen() {
       </div>
 
       {/* Quick Info Bar */}
-      <div className="bg-white px-4 py-4 border-b border-gray-200">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <div className="text-center">
-              <div className="text-sm font-bold text-gray-900">25-35</div>
-              <div className="text-xs text-gray-500">min</div>
-            </div>
-            <div className="text-center">
-              <div className="text-sm font-bold text-gray-900">4.6</div>
-              <div className="text-xs text-gray-500">rating</div>
-            </div>
-            <div className="text-center">
-              <div className="text-sm font-bold text-gray-900">1.2k</div>
-              <div className="text-xs text-gray-500">reviews</div>
-            </div>
+      <div className="bg-white px-4 py-3 border-b border-gray-200">
+        <div className="flex items-center gap-2">
+          {/* Duration container */}
+          <div className="bg-gray-200 rounded-lg px-2 py-1.5 text-center flex-shrink-0">
+            <div className="text-[8px] font-bold text-gray-900">Delivery</div>
+            <div className="text-[7px] text-gray-500">25-45 min</div>
           </div>
-          <button className="text-sm font-medium text-blue-600">
+          {/* Rating container */}
+          <div className="bg-gray-200 rounded-lg px-2 py-1.5 text-center flex-shrink-0">
+            <div className="text-[8px] font-bold text-gray-900">4.6</div>
+            <div className="text-[7px] text-gray-500">rating</div>
+          </div>
+
+          {/* Reviews container */}
+          <div className="bg-gray-200 rounded-lg px-2 py-1.5 text-center flex-shrink-0">
+            <div className="text-[8px] font-bold text-gray-900">1.2k</div>
+            <div className="text-[7px] text-gray-500">reviews</div>
+          </div>
+
+          {/* View all container */}
+          <button className="bg-blue-200 rounded-lg px-2 py-1.5 text-[8px] font-medium text-blue-600 whitespace-nowrap hover:bg-blue-100 transition-colors flex-shrink-0">
             View all
           </button>
         </div>
