@@ -394,95 +394,108 @@ export default function JENLandingMockup() {
 
 function HomeScreen({ compact = false }) {
   return (
-    <div className="h-full w-full overflow-y-auto bg-gray-50">
+    <div className="h-full w-full overflow-y-auto bg-white">
       {/* Status Bar */}
-      <div className="flex items-center justify-between px-6 py-2 text-xs font-semibold text-black">
+      <div className="flex items-center justify-between px-5 pt-2 pb-1 text-xs font-semibold text-black">
         <span>9:41</span>
         <div className="flex items-center gap-1">
-          <div className="flex gap-0.5">
-            <div className="h-1 w-1 rounded-full bg-black"></div>
-            <div className="h-1 w-1 rounded-full bg-black"></div>
-            <div className="h-1 w-1 rounded-full bg-black"></div>
-            <div className="h-1 w-1 rounded-full bg-gray-400"></div>
-          </div>
-          <div className="ml-2 h-3 w-6 rounded-sm border border-black">
-            <div className="h-full w-4/5 rounded-sm bg-black"></div>
+          <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z" />
+          </svg>
+          <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+          </svg>
+          <div className="ml-1 flex items-center gap-0.5">
+            <div className="h-2.5 w-5 rounded-sm border border-black relative">
+              <div className="absolute inset-0.5 w-3/4 rounded-sm bg-black"></div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
+      <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-md border-b border-gray-100 px-5 py-3.5">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <div
-              className="flex h-10 w-10 items-center justify-center rounded-2xl shadow-sm"
+              className="flex h-9 w-9 items-center justify-center rounded-xl"
               style={{ background: brand.primary }}
             >
-              <span className="text-lg font-extrabold text-black">J</span>
+              <span className="text-base font-black text-black">J</span>
             </div>
             <div>
-              <span className="text-xl font-bold tracking-tight text-gray-900">
+              <span className="text-lg font-black tracking-tight text-gray-900">
                 JEN
               </span>
-              <div className="text-xs text-gray-500 -mt-1">Marketplace</div>
+              <div className="text-[10px] text-gray-500 -mt-0.5 tracking-wide">
+                Marketplace
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="relative p-2">
-              <IconSearch className="h-5 w-5 text-gray-600" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500 flex items-center justify-center">
-                <span className="text-xs text-white font-bold">3</span>
-              </div>
-            </div>
-            <div className="relative p-2">
-              <IconBell className="h-5 w-5 text-gray-600" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500 flex items-center justify-center">
-                <span className="text-xs text-white font-bold">5</span>
-              </div>
-            </div>
+          <div className="flex items-center gap-1">
+            <button className="relative p-2 hover:bg-gray-50 rounded-lg transition-colors">
+              <IconSearch className="h-5 w-5 text-gray-700" />
+            </button>
+            <button className="relative p-2 hover:bg-gray-50 rounded-lg transition-colors">
+              <IconBell className="h-5 w-5 text-gray-700" />
+              <div className="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></div>
+            </button>
           </div>
         </div>
       </div>
 
-      <div className="px-6 pt-6">
+      <div className="px-5 pt-5 pb-24 bg-gradient-to-b from-gray-50 to-white">
         {/* Location Card */}
         <div
-          className="relative overflow-hidden rounded-3xl p-6 text-white shadow-lg"
-          style={{ background: brand.primary }}
+          className="relative overflow-hidden rounded-2xl p-5 text-white"
+          style={{
+            background: `linear-gradient(135deg, ${brand.primary} 0%, #95a31f 100%)`,
+            boxShadow: "0 8px 24px -6px rgba(172, 182, 37, 0.3)",
+          }}
         >
-          <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/10"></div>
-          <div className="absolute -left-4 -bottom-4 h-12 w-12 rounded-full bg-white/5"></div>
+          <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/8"></div>
+          <div className="absolute -left-6 -bottom-6 h-16 w-16 rounded-full bg-black/5"></div>
           <div className="relative">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-white/90"></div>
-                <p className="text-xs uppercase tracking-wide text-white/90 font-medium">
-                  Deliver to
+            <div className="flex items-start justify-between mb-3">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg
+                    className="h-3.5 w-3.5 text-white/90"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  <p className="text-[11px] uppercase tracking-wider text-white/90 font-semibold">
+                    Delivering to
+                  </p>
+                </div>
+                <p className="text-xl font-black mb-1">Ntinda</p>
+                <p className="text-sm text-white/90 font-medium">
+                  20–35 min delivery
                 </p>
               </div>
-              <button className="text-white/80">
+              <button className="p-2 hover:bg-white/10 rounded-lg transition-colors">
                 <svg
-                  className="h-4 w-4"
+                  className="h-4 w-4 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  strokeWidth={2.5}
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
               </button>
             </div>
-            <p className="text-xl font-bold mb-4">Ntinda • 20–35 min</p>
-            <div className="flex flex-wrap gap-2">
-              <span className="rounded-full bg-white/20 px-4 py-2 text-xs font-medium text-white backdrop-blur-sm">
-                Free delivery over 200,000 Ushs
+            <div className="flex flex-wrap gap-2 mt-4">
+              <span className="rounded-full bg-white/15 backdrop-blur-sm px-3 py-1.5 text-[11px] font-semibold text-white border border-white/20">
+                🎉 Free delivery over UGX 200K
               </span>
-              <span className="rounded-full bg-white/20 px-4 py-2 text-xs font-medium text-white backdrop-blur-sm">
+              <span className="rounded-full bg-white/15 backdrop-blur-sm px-3 py-1.5 text-[11px] font-semibold text-white border border-white/20">
                 ⭐ 4.8 Rating
               </span>
             </div>
@@ -490,23 +503,23 @@ function HomeScreen({ compact = false }) {
         </div>
 
         {/* Categories */}
-        <div className="mt-8">
+        <div className="mt-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-bold text-gray-900">Categories</h3>
-            <button className="text-sm font-medium text-gray-500">
+            <h3 className="text-base font-black text-gray-900">Browse</h3>
+            <button className="text-xs font-semibold text-gray-500 hover:text-gray-900">
               See all
             </button>
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-3">
             <Cat icon={<IconBurger />} label="Food" active={true} />
             <Cat icon={<IconCartMini />} label="Grocery" />
-            <Cat icon={<IconBottle />} label="Beverages" />
+            <Cat icon={<IconBottle />} label="Drinks" />
             <Cat icon={<IconSpark />} label="Deals" />
           </div>
         </div>
 
         {/* Content Sections */}
-        <div className={`mt-8 ${compact ? "space-y-6" : "space-y-8"}`}>
+        <div className={`mt-6 ${compact ? "space-y-5" : "space-y-6"}`}>
           <Row title="Popular Restaurants">
             <MiniVendorCard
               name="Kito Burger"
@@ -524,19 +537,16 @@ function HomeScreen({ compact = false }) {
           <Row title="Everyday Essentials">
             <MiniProductCard
               title="UHT Milk 500ml"
-              price="Shs 10,000"
+              price="UGX 10,000"
               image="🥛"
             />
             <MiniProductCard
               title="Toothpaste 110g"
-              price="Shs 15,000"
+              price="UGX 15,000"
               image="🦷"
             />
           </Row>
         </div>
-
-        {/* Bottom Spacing */}
-        <div className="h-20"></div>
       </div>
     </div>
   );
@@ -1048,50 +1058,48 @@ const MiniProductCard = ({ title, price, image }) => (
 );
 
 const MenuCard = ({ title, sub, price, image, popular, discount }) => (
-  <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
-    <div className="flex items-start gap-4">
-      <div className="relative">
-        <div className="h-16 w-16 rounded-xl bg-gray-100 flex items-center justify-center text-xl shadow-sm">
+  <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all group">
+    <div className="flex items-start gap-3.5">
+      <div className="relative flex-shrink-0">
+        <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center text-2xl shadow-sm group-hover:shadow transition-shadow">
           {image}
         </div>
         {popular && (
-          <div className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
-            Popular
+          <div className="absolute -top-1.5 -right-1.5 bg-orange-500 text-white text-[10px] px-2 py-1 rounded-lg font-black shadow-sm">
+            HOT
           </div>
         )}
         {discount && (
-          <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+          <div className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] px-2 py-1 rounded-lg font-black shadow-sm">
             {discount}
           </div>
         )}
       </div>
-      <div className="flex-1">
-        <div className="flex items-start justify-between mb-2">
-          <div>
-            <h3 className="text-base font-bold text-gray-900">{title}</h3>
-            <p className="text-sm text-gray-500 mt-1">{sub}</p>
-          </div>
-          <div className="text-right">
-            <div className="text-lg font-bold text-gray-900">{price}</div>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-start justify-between gap-2 mb-1.5">
+          <h3 className="text-sm font-black text-gray-900 leading-tight">{title}</h3>
+          <div className="text-right flex-shrink-0">
+            <div className="text-sm font-black text-gray-900">{price}</div>
             {discount && (
-              <div className="text-sm text-gray-500 line-through">
-                Shs 25,900
+              <div className="text-xs text-gray-400 line-through">
+                UGX 25,900
               </div>
             )}
           </div>
         </div>
+        <p className="text-xs text-gray-500 leading-relaxed mb-3">{sub}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <button className="h-8 w-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600">
+            <button className="h-8 w-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
               -
             </button>
             <span className="text-sm font-medium text-gray-900">1</span>
-            <button className="h-8 w-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600">
+            <button className="h-8 w-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
               +
             </button>
           </div>
           <button
-            className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-sm"
+            className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-sm hover:shadow-md transition-all"
             style={{ background: brand.primary }}
           >
             Add
