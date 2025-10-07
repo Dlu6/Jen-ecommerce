@@ -140,14 +140,14 @@ export default function JENLandingMockup() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 pb-16 pt-12 md:grid-cols-2 md:gap-12 md:pt-16">
           <div>
             <h1 className="text-4xl font-black leading-tight sm:text-5xl">
-              The everyday marketplace for
+              The everyday marketplace for{" "}
               <span
                 className="underline decoration-8"
                 style={{ textDecorationColor: brand.primary }}
               >
                 food
-              </span>
-              &nbsp;&amp; FMCG
+              </span>{" "}
+              &amp; FMCG
             </h1>
             <p className="mt-4 max-w-prose text-lg text-slate-600">
               JEN brings restaurants, groceries, and fast‑moving consumer goods
@@ -528,7 +528,7 @@ function HomeScreen({ compact = false }) {
               image="🍔"
             />
             <MiniVendorCard
-              name="Pasta Roma"
+              name="Pasta"
               tag="Italian • 20–30 min"
               rating="4.5"
               image="🍝"
@@ -605,25 +605,76 @@ function VendorScreen() {
 
       {/* Restaurant Hero Section */}
       <div className="relative bg-white">
-        <div className="h-32 bg-orange-500"></div>
-        <div className="relative px-6 -mt-8">
+        <div className="h-40 bg-gradient-to-br from-orange-400 to-orange-600 relative overflow-hidden">
+          {/* Big Burger Cover Artwork */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-8xl opacity-90 drop-shadow-lg">🍔</div>
+          </div>
+          {/* Restaurant Name Overlay */}
+          <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <h2 className="text-2xl font-black text-white drop-shadow-lg">
+              Kito Burger
+            </h2>
+          </div>
+        </div>
+        <div className="relative px-4 -mt-8">
           <div className="flex items-end gap-4">
             <div className="h-16 w-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl">
               🍔
             </div>
             <div className="flex-1 pb-2">
-              <h2 className="text-xl font-bold text-gray-900">Kito Burger</h2>
-              <div className="flex items-center gap-3 mt-1">
-                <span className="inline-flex items-center gap-1 text-sm text-gray-600">
-                  <IconStar className="h-4 w-4 text-yellow-500" />
-                  <b className="text-gray-900">4.6</b> (1.2k reviews)
-                </span>
-                <span className="text-sm text-gray-500">•</span>
-                <span className="text-sm text-gray-600">25–35 min</span>
-                <span className="text-sm text-gray-500">•</span>
-                <span className="text-sm text-gray-600">
-                  Shs 3,000 delivery
-                </span>
+              <div className="space-y-2 mt-2">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center">
+                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                    <IconStar className="h-3 w-3 text-yellow-400 fill-current" />
+                  </div>
+                  <span className="text-sm font-bold text-gray-200">4.6</span>
+                  <span className="text-xs text-gray-100">(1.2k)</span>
+                </div>
+                <div className="flex items-center gap-4 text-xs text-gray-600">
+                  <span className="flex items-center gap-1">
+                    <svg
+                      className="h-3 w-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    25–35 min
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <svg
+                      className="h-3 w-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    Shs 3,000
+                  </span>
+                </div>
               </div>
               <div className="mt-2 text-sm text-gray-500">
                 Burgers • American • Fast Food
@@ -634,7 +685,7 @@ function VendorScreen() {
       </div>
 
       {/* Quick Info Bar */}
-      <div className="bg-white px-6 py-4 border-b border-gray-200">
+      <div className="bg-white px-4 py-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-6">
             <div className="text-center">
@@ -657,7 +708,7 @@ function VendorScreen() {
       </div>
 
       {/* Menu Categories */}
-      <div className="bg-white px-6 py-4 border-b border-gray-200">
+      <div className="bg-white px-4 py-4 border-b border-gray-200">
         <div className="flex gap-3 overflow-x-auto">
           <button className="px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-medium whitespace-nowrap">
             Popular
@@ -675,7 +726,7 @@ function VendorScreen() {
       </div>
 
       {/* Menu Items */}
-      <div className="px-6 py-6">
+      <div className="px-4 py-6">
         <div className="space-y-4">
           <MenuCard
             title="Double Beef Burger"
@@ -743,11 +794,11 @@ function SearchScreen() {
       </div>
 
       {/* Search Header */}
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
-        <div className="flex items-center gap-4">
-          <button className="p-2">
+      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-3">
+        <div className="flex items-center gap-3">
+          <button className="p-1.5 flex-shrink-0">
             <svg
-              className="h-5 w-5 text-gray-600"
+              className="h-4 w-4 text-gray-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -760,21 +811,21 @@ function SearchScreen() {
               />
             </svg>
           </button>
-          <div className="flex flex-1 items-center gap-4 rounded-2xl bg-gray-100 px-4 py-3">
-            <IconSearch className="h-5 w-5 text-gray-500" />
+          <div className="flex items-center gap-2 rounded-2xl bg-gray-100 px-3 py-2 flex-1 min-w-0">
+            <IconSearch className="h-4 w-4 text-gray-500 flex-shrink-0" />
             <input
-              className="flex-1 bg-transparent text-sm outline-none placeholder:text-gray-400"
+              className="flex-1 bg-transparent text-sm outline-none placeholder:text-gray-400 min-w-0"
               placeholder="Search 'bread', 'pizza', 'soap'…"
             />
-            <div className="h-6 w-px bg-gray-300"></div>
-            <button className="text-sm font-medium text-gray-600">
+            <div className="h-4 w-px bg-gray-300 flex-shrink-0"></div>
+            <button className="text-xs font-medium text-gray-600 flex-shrink-0">
               Filter
             </button>
           </div>
         </div>
       </div>
 
-      <div className="px-6 py-6">
+      <div className="px-4 py-6">
         {/* Popular Searches */}
         <div className="mb-8">
           <p className="mb-4 text-lg font-bold text-gray-900">
@@ -833,7 +884,7 @@ function CheckoutScreen() {
   return (
     <div className="flex h-full w-full flex-col bg-gray-50">
       {/* Status Bar */}
-      <div className="flex items-center justify-between px-6 py-2 text-xs font-semibold text-black">
+      <div className="flex items-center justify-between px-4 py-2 text-xs font-semibold text-black">
         <span>9:41</span>
         <div className="flex items-center gap-1">
           <div className="flex gap-0.5">
@@ -849,7 +900,7 @@ function CheckoutScreen() {
       </div>
 
       {/* Header */}
-      <div className="border-b border-gray-200 bg-white px-6 py-4">
+      <div className="border-b border-gray-200 bg-white px-4 py-4">
         <div className="flex items-center gap-4">
           <button className="p-2">
             <svg
@@ -871,7 +922,7 @@ function CheckoutScreen() {
       </div>
 
       {/* Cart Items */}
-      <div className="flex-1 overflow-y-auto px-6 py-6">
+      <div className="flex-1 overflow-y-auto px-4 py-6">
         <div className="space-y-4">
           <LineItem title="UHT Milk 500ml" qty={2} price={0.8} image="🥛" />
           <LineItem title="Toothpaste 110g" qty={1} price={1.25} image="🦷" />
@@ -932,7 +983,7 @@ function CheckoutScreen() {
       </div>
 
       {/* Bottom Action */}
-      <div className="border-t border-gray-200 bg-white p-6 shadow-lg">
+      <div className="border-t border-gray-200 bg-white p-4 shadow-lg">
         <button
           className="w-full rounded-2xl px-6 py-4 text-base font-bold text-white shadow-lg"
           style={{ background: brand.primary }}
@@ -1016,95 +1067,122 @@ const ProductCard = ({ title, sub, price }) => (
 );
 
 const MiniVendorCard = ({ name, tag, rating, image }) => (
-  <div className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-3 shadow-sm">
-    <div className="h-10 w-10 rounded-lg bg-gray-100 flex items-center justify-center text-sm">
-      {image}
-    </div>
-    <div className="flex-1">
-      <div className="flex items-center justify-between">
-        <b className="text-sm text-gray-900">{name}</b>
-        <span className="inline-flex items-center gap-1 text-xs text-gray-600">
-          <IconStar className="h-3 w-3 text-yellow-500" />
-          {rating}
-        </span>
+  <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm hover:shadow-md transition-all group">
+    <div className="flex flex-col gap-3">
+      {/* Image at the top */}
+      <div className="flex justify-center">
+        <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center text-3xl shadow-sm group-hover:shadow transition-shadow">
+          {image}
+        </div>
       </div>
-      <p className="text-xs text-gray-500">{tag}</p>
+
+      {/* Text content in the middle */}
+      <div className="text-center space-y-1">
+        <h3 className="text-sm font-bold text-gray-900 leading-tight">
+          {name}
+        </h3>
+        <p className="text-xs text-gray-500 leading-tight">{tag}</p>
+        <div className="flex items-center justify-center gap-1">
+          <IconStar className="h-3 w-3 text-yellow-500" />
+          <span className="text-xs font-semibold text-gray-600">{rating}</span>
+        </div>
+      </div>
+
+      {/* Button at the bottom */}
+      <button
+        className="w-full rounded-lg px-3 py-2 text-xs font-bold text-white shadow-sm hover:shadow-md transition-all"
+        style={{ background: brand.primary }}
+      >
+        View Menu
+      </button>
     </div>
-    <button
-      className="rounded-lg px-3 py-1 text-xs font-semibold text-white"
-      style={{ background: brand.primary }}
-    >
-      Remove
-    </button>
   </div>
 );
 
 const MiniProductCard = ({ title, price, image }) => (
-  <div className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-3 shadow-sm">
-    <div className="h-10 w-10 rounded-lg bg-gray-100 flex items-center justify-center text-sm">
-      {image}
+  <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm hover:shadow-md transition-all group">
+    <div className="flex flex-col gap-3">
+      {/* Image at the top */}
+      <div className="flex justify-center">
+        <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center text-2xl shadow-sm group-hover:shadow transition-shadow">
+          {image}
+        </div>
+      </div>
+
+      {/* Text content in the middle */}
+      <div className="text-center space-y-1">
+        <h3 className="text-sm font-bold text-gray-900 leading-tight">
+          {title}
+        </h3>
+        <p className="text-xs text-gray-500 font-semibold">{price}</p>
+      </div>
+
+      {/* Button at the bottom */}
+      <button
+        className="w-full rounded-lg px-3 py-2 text-xs font-bold text-white shadow-sm hover:shadow-md transition-all"
+        style={{ background: brand.primary }}
+      >
+        Add to Cart
+      </button>
     </div>
-    <div className="flex-1">
-      <div className="text-sm font-semibold text-gray-900">{title}</div>
-      <div className="text-xs text-gray-500">{price}</div>
-    </div>
-    <button
-      className="rounded-lg px-3 py-1 text-xs font-semibold text-white"
-      style={{ background: brand.primary }}
-    >
-      Add
-    </button>
   </div>
 );
 
 const MenuCard = ({ title, sub, price, image, popular, discount }) => (
-  <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all group">
-    <div className="flex items-start gap-3.5">
-      <div className="relative flex-shrink-0">
-        <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center text-2xl shadow-sm group-hover:shadow transition-shadow">
+  <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm hover:shadow-md transition-all group">
+    <div className="flex flex-col gap-3">
+      {/* Image at the top */}
+      <div className="flex justify-center relative">
+        <div className="h-24 w-24 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center text-3xl shadow-sm group-hover:shadow transition-shadow">
           {image}
         </div>
         {popular && (
-          <div className="absolute -top-1.5 -right-1.5 bg-orange-500 text-white text-[10px] px-2 py-1 rounded-lg font-black shadow-sm">
+          <div className="absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] px-2 py-1 rounded-lg font-black shadow-sm">
             HOT
           </div>
         )}
         {discount && (
-          <div className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] px-2 py-1 rounded-lg font-black shadow-sm">
+          <div className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] px-2 py-1 rounded-lg font-black shadow-sm">
             {discount}
           </div>
         )}
       </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-start justify-between gap-2 mb-1.5">
-          <h3 className="text-sm font-black text-gray-900 leading-tight">{title}</h3>
-          <div className="text-right flex-shrink-0">
-            <div className="text-sm font-black text-gray-900">{price}</div>
-            {discount && (
-              <div className="text-xs text-gray-400 line-through">
-                UGX 25,900
-              </div>
-            )}
+
+      {/* Text content in the middle */}
+      <div className="text-center space-y-1">
+        <h3 className="text-sm font-black text-gray-900 leading-tight">
+          {title}
+        </h3>
+        <p className="text-xs text-gray-500 leading-tight line-clamp-2">
+          {sub}
+        </p>
+        <div className="text-sm font-black text-gray-900">{price}</div>
+        {discount && (
+          <div className="text-[10px] text-gray-400 line-through">
+            UGX 25,900
           </div>
-        </div>
-        <p className="text-xs text-gray-500 leading-relaxed mb-3">{sub}</p>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <button className="h-8 w-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
-              -
-            </button>
-            <span className="text-sm font-medium text-gray-900">1</span>
-            <button className="h-8 w-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
-              +
-            </button>
-          </div>
-          <button
-            className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-sm hover:shadow-md transition-all"
-            style={{ background: brand.primary }}
-          >
-            Add
+        )}
+      </div>
+
+      {/* Quantity controls and Add button at the bottom */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-center gap-3">
+          <button className="h-7 w-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
+            -
+          </button>
+          <span className="text-sm font-medium text-gray-900 min-w-[20px] text-center">
+            1
+          </span>
+          <button className="h-7 w-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
+            +
           </button>
         </div>
+        <button
+          className="w-full rounded-lg px-3 py-2 text-xs font-bold text-white shadow-sm hover:shadow-md transition-all"
+          style={{ background: brand.primary }}
+        >
+          Add
+        </button>
       </div>
     </div>
   </div>
